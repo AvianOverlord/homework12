@@ -1,5 +1,12 @@
 module.exports = function (sequelize, DataTypes) {
     var Activity = sequelize.define("Activity", {
+      activityName:{
+        type: DataTypes.STRING, //Check this in datatypes
+        allowNull: false,
+        validate: {
+            len: [1]
+        },
+      },
       duration: {
         type: DataTypes.FLOAT, //Check this in datatypes
         allowNull: true
