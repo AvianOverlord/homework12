@@ -8,12 +8,13 @@ const ExerciseCntrl = {
   getAll(req, res){
 
     // -- YOU WILL UPDATE WHAT THE "RESPONSE OBJECT" RETURNS -- //
-    return res.json({ searching: "Finding Exercises ..."})
-
     // -- EXAMPLE SEQUELIZE DB QUERY -- //
     // Exercise.find({}).then(data => {
     //   res.json(data)
     // });
+    Exercise.findAll().then(function(data){
+      return res.json(data);
+    });
   }
 }
 
