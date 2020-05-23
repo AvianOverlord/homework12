@@ -98,7 +98,20 @@ $(document).ready(function(){
 
   // STUDENTS: Retrieve a JSON payload of all workouts done so far
   function getWorkouts(){
-    
+    $.ajax({
+      method: "GET",
+      url: "/api/workout"
+    }).then( resp => {
+      console.log(resp)
+      // populate the select area
+      resp.forEach( workout => {
+        const opt = $("<option>");
+        opt.val(workout.name);
+        opt.text(workout.name);
+        $("select#workout").append(opt);
+      });
+
+    })
   }
 
   // Save the currently selected workout
