@@ -12,6 +12,8 @@ const WorkoutCntrl = require("../controllers/workoutCntrl");
 // Calls controller which will return all activities for a specific workout
 router.get("/exercise", ExerciseCntrl.getAll);
 
+router.post("/api/activity?workoutId", ActivityCntrl.saveActivity);
+
 router.get("/workout", WorkoutCntrl.getAll);
 router.post("/workout",WorkoutCntrl.saveWorkout);
 
