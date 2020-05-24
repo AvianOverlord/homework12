@@ -106,8 +106,8 @@ $(document).ready(function(){
       // populate the select area
       resp.forEach( workout => {
         const opt = $("<option>");
-        opt.val(workout.name);
-        opt.text(workout.name);
+        opt.val(workout.workoutName);
+        opt.text(workout.workoutName);
         $("select#workout").append(opt);
       });
 
